@@ -31,13 +31,13 @@ local kp =
         // Reference info: https://coreos.com/operators/prometheus/docs/latest/api.html#prometheusspec
         spec+: {
           // An e.g. of the purpose of this is so the "Source" links on http://<alert-manager>/#/alerts are valid.
-          externalUrl: 'http://192.168.99.100:30900',
+          externalUrl: 'http://192.168.49.2:30900',
 
           // Reference info: "external_labels" on https://prometheus.io/docs/prometheus/latest/configuration/configuration/
           externalLabels: {
             // This 'cluster' label will be included on every firing prometheus alert. (This is more useful
             // when running multiple clusters in a shared environment (e.g. AWS) with other users.)
-            cluster: 'minikube-<INSERT YOUR USERNAME HERE>',
+            cluster: 'minikube-yinfang',
           },
         },
       },
@@ -46,7 +46,7 @@ local kp =
       alertmanager+: {
         // Reference info: https://github.com/coreos/prometheus-operator/blob/master/Documentation/api.md#alertmanagerspec
         spec+: {
-          externalUrl: 'http://192.168.99.100:30903',
+          externalUrl: 'http://192.168.49.2:30903',
 
           logLevel: 'debug',  // So firing alerts show up in log
         },
